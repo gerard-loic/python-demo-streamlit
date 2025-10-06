@@ -1,0 +1,1 @@
+CSV_URL = 'data/elus-conseillers-municipaux-cm.csv'
