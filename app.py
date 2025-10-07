@@ -1,6 +1,4 @@
-import sys
-sys.path.append('config')
-import config
+from config.config import Config
 from src.datamanager import DataManager
 from src.appmanager import AppManager
 import streamlit as st

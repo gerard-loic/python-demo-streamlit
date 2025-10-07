@@ -1,8 +1,6 @@
 from src.datamanager import DataManager
 import streamlit as st
-import sys
-sys.path.append('config')
-import config
+from config.config import Config
 import numpy as np
 import pydeck as pdk
 import pandas as pd
@@ -21,7 +19,7 @@ class AppManager():
 
 
     def buildStructure(self):
-        st.title(config.APP_TITLE)
+        st.title(Config.APP_TITLE)
         self.col1, self.col2 = st.columns(2)
         st.set_page_config(layout="wide")
 

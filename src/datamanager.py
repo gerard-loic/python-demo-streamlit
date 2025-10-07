@@ -1,7 +1,5 @@
 import duckdb
-import sys
-sys.path.append('config')
-import config
+from config.config import Config
 import streamlit as st
 import math
 import pandas as pd
@@ -36,7 +34,7 @@ class DataManager():
 
 
     def initData(_self):
-        getdata = f"CREATE TABLE conseillers AS SELECT * FROM read_csv_auto('{config.CSV_URL}')"
+        getdata = f"CREATE TABLE conseillers AS SELECT * FROM read_csv_auto('{Config.CSV_URL}')"
         _self.cnx.execute(getdata)
         print("Données chargées")
 
@@ -82,9 +80,9 @@ class DataManager():
         result['long'] = None
 
         for index, row in result.iterrows():
-            if row["departement"] in config.DEPARTEMENTS:
-                result.at[index, 'lat'] = config.DEPARTEMENTS[row["departement"]]["latitude"]
-                result.at[index, 'long'] = config.DEPARTEMENTS[row["departement"]]["longitude"]
+            if row["departement"] in Config.DEPARTEMENTS:
+                result.at[index, 'lat'] = Config.DEPARTEMENTS[row["departement"]]["latitude"]
+                result.at[index, 'long'] = Config.DEPARTEMENTS[row["departement"]]["longitude"]
 
         return result
 
