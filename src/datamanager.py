@@ -154,7 +154,7 @@ class DataManager():
         values = []
 
         for i in range(0, int(100/5)):
-            labels.append(str(str(i*5+1)+" - "+str(i*5)))
+            labels.append(str(str(i*(5+1))+" - "+str(i*5)))
             values.append(int(ranges[i]))
         out = {"labels" : labels, "values" : values}
 
